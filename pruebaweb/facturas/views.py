@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from . import models as m
+
 # Create your views here.
 def index(request):
     return HttpResponse("Hello ingreso a la pagina principal de las facturas, por favor seleccione a continuacion que desea hacer:")
@@ -19,4 +21,5 @@ def eliminar(request):
 
 
 def leer(request):
-    return HttpResponse("¡A continuacion podemos observar la factura que desee!")
+    facturas_activas = m.Bill.objects.all()
+    return render(request, "facturas/leer.html", {"facturas": facturas_activas})

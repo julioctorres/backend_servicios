@@ -5,3 +5,4 @@ class Client(models.Model):
     first_name =  models.CharField(max_length=15)
     last_name = models.CharField(max_length=15)
     email =  models.CharField(max_length=50)
+    passwoord = models.CharField(max_length=10)

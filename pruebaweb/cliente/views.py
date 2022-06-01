@@ -1,26 +1,41 @@
+import email
 from re import template
 from typing import Generic
 from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic 
+from django.contrib.auth.forms import UserCreationForm
 
 from . import services as s
 from . import models as m
+
 # Create your views here.
 
 def index(request):
-    return HttpResponse("¡Hola! estas en la pagina principal, que deseas hacer")
-
+    model = m.Client
+    return render(request, "cliente/index.html")
 
 def ingreso(request):
-    
-    return HttpResponse("has seleccionado ingreso, por favor llenar las credenciales ")
+    return render(request, "cliente/ingreso.html")
+def registro(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            firts_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['username']
+            password = form.cleaned_data['username']
+    else:
+            form = UserCreationForm()
+
+    context = {'form': form}    
+    return render(request,'cliente/registro_cliente.html')
 
 
-class registro(generic.TemplateView):
-    model = m.Client
-    template_name = "cliente/registro_cliente.html"
+def CargueDescargue(request):
+    return render(request, "cliente/cargue_descargue.html")
 
 class IngPrincipal(generic.View):
     def get(self, request):
@@ -36,7 +51,8 @@ def eliminar_usuario(request):
 
 
 def leer_usuarios(request):
-    return HttpResponse("A continuacion se mostrara todos los usuarios ")
+    clientes_activos = m.Client.objects.all()
+    return render(request, "cliente/leer_usuarios.html", {"clientes": clientes_activos})
 
 
 def actualizar_usuario(request):

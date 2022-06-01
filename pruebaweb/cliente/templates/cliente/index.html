@@ -1,0 +1,17 @@
+{% block content %} 
+
+<div>
+    <h5>Ha ingresado a la pagina principal, por favor seleccione alguna de las dos opciones</h5>
+</div>
+
+
+
+<a href="{% url 'ingreso' %}" type="button" class="btn btn-primary" > 
+    <input type="button" value="Iniciar sesion">
+</a>
+
+<a href="{% url 'registro' %}" class = "button" >
+    <input type="button" value="registrarte">
+</a>
+
+{% endblock  %}
