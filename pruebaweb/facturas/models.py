@@ -3,13 +3,11 @@ from cliente.models import Client
 from productos.models import Product
 
 class Bill(models.Model):
-    id_bills = models.IntegerField
     client_id = models.ForeignKey(Client, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=50)
-    nit = models.IntegerField
-    code = models.IntegerField
+    nit = models.IntegerField()
+    code = models.IntegerField()
 
 class Bill_product(models.Model):
-    id = models.IntegerField
     bill_id = models.ForeignKey(Bill, on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
