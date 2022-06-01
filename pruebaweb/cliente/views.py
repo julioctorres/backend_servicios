@@ -35,6 +35,7 @@ def registro(request):
 
 
 def CargueDescargue(request):
+    
     return render(request, "cliente/cargue_descargue.html")
 
 class IngPrincipal(generic.View):
