@@ -41,6 +41,32 @@
     <button type="submit" class="btn btn-primary">ingresar</button>
   </div>
 </form>
+<script>
+  function obtenerDatos(){
+    var usuario = document.getElementById("inputEmail").value
+    var pasword = document.getElementById("inputPassword4").Value;
+    var document = document.getElementById("inputAddress2").Value;
+    var firstName = document.getElementById("first").Value;
+    var lastname = document.getElementById("last").Value;
+    var Email = document.getElementById("email").Value;
+    document.usuarioObtenido.value = usuario
+    document.paswordObtenido.value = pasword
+    document.documentObtenido.value = document
+    document.primerNombreObtenido.value = firstName
+    document.segundoNombreObtenido.value = lastname
+    document.EmailObtenida.value = Email
+}
+var usuarioObtenido = "";
+var paswordObtenida = "";
+var documentObtenido = "";
+var primerNombreObtenido = "";
+var segundoNombreObtenido ="";
+var EmailObtenida ="";
+
+var boton = document.getElementById("botom")
+
+boton.onclick = obtenerDatos
+</script>
 </body>
 </html>
 

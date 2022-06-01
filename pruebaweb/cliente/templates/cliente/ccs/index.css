@@ -1,0 +1,19 @@
+*{
+    text-align: center;
+}
+h5{
+    font-size: larger;
+    margin-bottom: 90px;
+}
+a{
+    text-decoration: none;
+    padding: 30px 50px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    background: rgb(154, 161, 255);;
+    letter-spacing: 0;
+    line-height: 24px;
+    transform: skewY(-6deg);
+    margin: 75px;
+}

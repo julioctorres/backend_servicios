@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    
 </head>
 <body>
     <form>
@@ -25,6 +25,21 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+    <script >
+      function obtenerDatos(){
+        console.log("cats")
+         var userName = document.getElementById("Email1").value
+         var pasword = document.getElementById("Password1").Value;
+        
+         document.nombreObtenido.value = userName
+         document.paswordObtenida.value = pasword
+    }
     
+    var nombreObtenido;
+    var paswordObtenida;
+    
+    var boton = document.getElementById("boton");
+    boton.onclick = obtenerDatos;
+    </script>
 </body>
 </html>
